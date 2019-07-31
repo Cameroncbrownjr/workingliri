@@ -33,7 +33,11 @@ function getMovie(movie) {
   axios
     .get("http://www.omdbapi.com/?apikey=trilogy&t=" + movie)
     .then(function (response) {
-      console.log(response.data);
+      console.log(response.data.Title);
+      console.log(response.data.Year);
+      console.log(response.data.Rated);
+      console.log(response.data.Actors);
+      console.log(response.data.imdbRating);
     });
 }
 
@@ -73,11 +77,11 @@ function getSong(song) {
       console.log(response);
       var songArr = response.tracks.items
 
-        // console.log('Artist: ' + songArr.artists[0].name)
-        // console.log('Song Name: ' + songArr.name)
-        // console.log('Album Name: ' + songArr.album.name)
-        // console.log('Preview URL: ' + songArr.preview_url)
-        // console.log('\n');
+        console.log('Artist: ' + songArr.artists[0].name)
+        console.log('Song Name: ' + songArr.name)
+        console.log('Album Name: ' + songArr.album.name)
+        console.log('Preview URL: ' + songArr.preview_url)
+        console.log('\n');
 
     })
     .catch(function (err) {
